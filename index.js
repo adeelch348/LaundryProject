@@ -3,10 +3,10 @@ const app = express();
 
 const port = 3000;
 
-// require("./models/index");
+require("./models/index");
 
 app.get("/", function (res, req) {
-  req.send("Laundry Application");
+  req.send("Laundry Application is very helpful");
 });
 
 app.listen(port, () => {
