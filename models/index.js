@@ -1,19 +1,33 @@
-const Sequelize = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
+const { addUser } = require("../controllers/userController");
 
 const sequelize = new Sequelize("adeel", "adeel", "adeel348", {
-  host: "localhost",
-  port: 3000,
   dialect: "postgres",
+  host: "127.0.0.1",
+  logging: false,
 });
 
-console.log("before authentication");
 sequelize
   .authenticate()
   .then(() => {
-    console.log("Connected");
+    console.log("Successfully Connected to Database");
   })
   .catch((error) => {
     console.log(error);
   });
 
-//const result = sequelize.authenticate().then(() => console.log("authorized"));
+const db = {};
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+// db.sequelize
+//   .sync()
+//   .then(() => {
+//     console.log("Table Created Successfully");
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+db.users = require("./users")(sequelize, DataTypes);
+exports.module = db;
