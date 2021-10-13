@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const { addUser } = require("../controllers/userController");
+// const { addUser } = require("../controllers/userController");
 
 const sequelize = new Sequelize("adeel", "adeel", "adeel348", {
   dialect: "postgres",
@@ -29,5 +29,5 @@ db.sequelize = sequelize;
 //     console.log(error);
 //   });
 
-db.users = require("./users")(sequelize, DataTypes);
-exports.module = db;
+db.users = require("./users.js")(sequelize, DataTypes);
+module.exports = db;

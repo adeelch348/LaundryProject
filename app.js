@@ -1,12 +1,10 @@
 const express = require("express");
 const app = express();
-const db = require("./models");
+// const db = require("./models");
+require("./models");
+let userControl = require("./controllers/userController.js");
 
 const port = 3000;
-
-require("./models");
-
-let userControl = require("./controllers/userController");
 
 app.use("/doc", express.static("./doc"));
 

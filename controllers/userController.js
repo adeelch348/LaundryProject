@@ -8,17 +8,22 @@ const addUser = async (res, req) => {
     //   user_name: "Adeel",
     //   user_email: "adeel@gmail.com",
     // });
-
+    // let data = await User.findAll();
+    // {
+    //   let response = {
+    //     data: data,
+    //   };
+    //   req.status(200).json(response);
+    // }
     let data = await User.create({
       user_name: "Adeel",
       user_email: "adeel@gmail.com",
-      gender: "Male",
     });
     // console.log(data.dataValues);
     // await data.save();
 
     let response = {
-      data: "ok",
+      data: data,
     };
     req.status(200).json(response);
   } catch (e) {
