@@ -2,10 +2,10 @@
   "development": {
     "username": "adeel",
     "password": "adeel348",
-    "database": "adeel",
+    "database": "Laundry",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "operatorsAliases": false
+    "operatorsAliases": 0
   },
   "test": {
     "username": "root",

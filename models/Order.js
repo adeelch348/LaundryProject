@@ -1,6 +1,6 @@
 "use strict";
 /**
- * @api {get} /user/:id Request User information
+ * @api {get} /user/:id User information
  * @apiName GetModels
  * @apiGroup Models
  *
@@ -12,7 +12,7 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Order = sequelize.define(
-    "orders",
+    "order",
     {
       order: {
         type: DataTypes.STRING,
@@ -21,8 +21,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+      orderDetail: {
+        type: DataTypes.STRING,
+      },
     },
-    {}
+    {
+      underscored: true,
+    }
   );
   return Order;
 };

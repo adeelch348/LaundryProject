@@ -5,7 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "docs": "apidoc -i ./models -e node_modules  -o doc/"
+    "docs": "apidoc -i ./models -e node_modules  -o doc/",
+    "migrate": "sequelize-cli db:migrate",
+    "undo-all-migrate": "sequelize-cli db:migrate:undo:all",
+    "undo-file": "sequelize-cli db:migrate:undo",
+    "migrate-file": "sequelize-cli db:migrate",
+    "migrate-status": "sequelize-cli db:migrate:status",
+    "generate-seed": "sequelize-cli seed:generate --name",
+    "seed-all": "sequelize-cli db:seed:all",
+    "undo-all-seed": "sequelize-cli db:seed:undo:all",
+    "seed-file": "sequelize-cli db:seed -name",
+    "undo-seed-file": "sequelize db:seed:undo --name"
   },
   "keywords": [],
   "author": "",

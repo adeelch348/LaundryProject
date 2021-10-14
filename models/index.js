@@ -19,9 +19,10 @@ sequelize
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
+db.DataTypes = DataTypes;
 
 // db.sequelize
-//   .sync()
+//   .sync({ force: true })
 //   .then(() => {
 //     console.log("Table Created Successfully");
 //   })
@@ -29,5 +30,6 @@ db.sequelize = sequelize;
 //     console.log(error);
 //   });
 
-db.users = require("./users.js")(sequelize, DataTypes);
+db.users = require("./users")(sequelize, DataTypes);
+db.order = require("./Order")(sequelize, DataTypes);
 module.exports = db;
